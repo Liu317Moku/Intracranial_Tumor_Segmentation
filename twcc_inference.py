@@ -7,13 +7,13 @@ import subprocess
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 #nnU-Net 環境變數
-os.environ['nnUNet_raw'] = '/home/u20030317/twcc1/nnunet/nnUNet_raw'
-os.environ['nnUNet_preprocessed'] = '/home/u20030317/twcc1/nnunet/nnUNet_preprocessed'
-os.environ['nnUNet_results'] = '/home/u20030317/twcc1/nnunet/nnUNet_results'
+os.environ['nnUNet_raw'] = '/home/nnunet/nnUNet_raw'
+os.environ['nnUNet_preprocessed'] = '/home/nnunet/nnUNet_preprocessed'
+os.environ['nnUNet_results'] = '/home/nnunet/nnUNet_results'
 
 #推論資料夾
-input_folder = "/home/u20030317/twcc1/private/INPUT"
-output_folder = "/home/u20030317/twcc1/private/PREDICT"
+input_folder = "/home/private/INPUT"
+output_folder = "/home/private/PREDICT"
 
 os.makedirs(output_folder, exist_ok=True)
 
@@ -23,7 +23,7 @@ print("Output folder:", output_folder)
 
 #nnUNetv2_predict 指令
 cmd = [
-    "/home/u20030317/miniconda3/envs/nnunet4/bin/nnUNetv2_predict",
+    "/home/miniconda3/envs/nnunet4/bin/nnUNetv2_predict",
     "-d", "1",  # dataset ID
     "-i", input_folder,
     "-o", output_folder,
