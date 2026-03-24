@@ -1,9 +1,9 @@
 import os
 
 # 環境變數
-os.environ["nnUNet_raw_data_base"] = "/home/u20030317/twcc1/nnunet/nnUNet_raw"
-os.environ["nnUNet_preprocessed"] = "/home/u20030317/twcc1/nnunet/nnUNet_preprocessed"
-os.environ["nnUNet_results"] = "/home/u20030317/twcc1/nnunet/nnUNet_results"
+os.environ["nnUNet_raw_data_base"] = "/home/nnunet/nnUNet_raw"
+os.environ["nnUNet_preprocessed"] = "/home/nnunet/nnUNet_preprocessed"
+os.environ["nnUNet_results"] = "/home/nnunet/nnUNet_results"
 
 from nnunetv2.training.network_training.nnUNet_training import train_nnUNet
 
