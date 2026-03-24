@@ -7,12 +7,12 @@ import subprocess
 import shutil
 
 # 路徑設定
-task_dir = "/home/u20030317/twcc1/nnunet/nnUNet_raw/Dataset001"
+task_dir = "/home/nnunet/nnUNet_raw/Dataset001"
 imagesTr_dir = os.path.join(task_dir, "imagesTr")
 labelsTr_dir = os.path.join(task_dir, "labelsTr")
 backup_dir = labelsTr_dir + "_backup"
 
-# 先備份原 labelsTr（只做一次）
+# 先備份原 labelsTr
 if not os.path.exists(backup_dir):
     shutil.copytree(labelsTr_dir, backup_dir)
     print(f" 原 labelsTr 已備份到 {backup_dir}")
@@ -49,9 +49,6 @@ for lbl_path in label_files:
 
 print(" labelsTr 已轉為二分類（0=背景, 1=腫瘤）")
 
-# ================================
-# 更新 dataset.json（二分類）
-# ================================
 image_files = sorted(glob.glob(os.path.join(imagesTr_dir, "*.nii.gz")))
 
 dataset_json = {
